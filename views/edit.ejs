@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>- Agenda Escolar: Agregar</title>
+</head>
+<body>
+    <h2>Editar Alumno</h2>
+
+    <% if(alumno) { %>
+    <div>
+        <form action="/save" method="POST">
+            <!--Capturamos el ID-->
+            <input id="id" name="id" value="<%= alumno.id %>" hidden>
+            
+            <div>
+                <label for="apellido">Apellido</label>
+                <input type="text" name="apellido" id="apellido" value="<%= alumno.apellido %>">
+            </div>
+            <div>
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="nombre" value="<%= alumno.nombre %>">
+            </div>
+            <div>
+                <label for="dni">DNI</label>
+                <input type="text" name="dni" id="dni" value="<%= alumno.dni %>">
+            </div>
+
+            <button type="submit">GUARDAR</button> <!--Al darle al boton aplicara el submit y aplicara la accion del form, en este caso /save-->
+            <a href="/">CANCELAR</a>
+        </form>
+    </div>
+    <% } %>
+</body>
+</html>
